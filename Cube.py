@@ -1,10 +1,20 @@
 class Cube:
-    # try to do the arr like this cube_array = [[[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]]] it will be easier to do class faces
-    def __init__(self, cubearr):
-        self._cubearr = cubearr
-    def cubearr(self, new_cubearr):
-        # Add any validation logic if needed
-        self._cubearr = new_cubearr
-    @property
-    def cubearr(self):
-        return self._cubearr
+    def __init__(self, cubetext):
+        self.cubearr = []
+        for i in range(0, len(cubetext), 6):
+            self.cubearr.append(cubetext[i:i+6])
+
+    def get_cubearr(self):
+        return self.cubearr
+
+    def print_cube(self):
+        for item in self.get_cubearr():
+            print(item)
+
+        print(len(self.get_cubearr()))
+
+text = "w r g g r g o w o r r b y o r r o b o r r b y w w y g w o b b w w g g y w g g y b w o o y r b y y g o b b y"
+stripped_text = "".join(text.split())
+print(stripped_text)
+my_cube = Cube(stripped_text)
+my_cube.print_cube()
