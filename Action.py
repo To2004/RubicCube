@@ -4,7 +4,6 @@ class Action (Faces):
         super().__init__(cubearr)
     def F (self):
         # Add any validation logic if needed
-        new_cubearr=
         self._cubearr = new_cubearr
 
     def R(self):
@@ -19,6 +18,6 @@ class Action (Faces):
     def cubearr(self):
         # Add any validation logic if needed
         self._cubearr = new_cubearr
-    def cubearr(self:
+    def cubearr(self):
         # Add any validation logic if needed
         self._cubearr = new_cubearr
