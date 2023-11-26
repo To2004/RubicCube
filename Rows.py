@@ -1,3 +1,6 @@
+from Cube import Cube
+
+
 class Rows (Cube):
 
     def __init__(self, cubearr):

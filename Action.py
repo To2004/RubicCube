@@ -8,20 +8,20 @@ class Action (Faces,Algoritem):
         super().__init__(cubearr)
     def F (self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr
+        custom_cube=Algoritem.transform_cube_to_custom_shape(self.cubearr())
+
 
     def R(self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr
+
     def U(self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr
+
     def cubearr(self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr
+
     def cubearr(self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr
+
     def cubearr(self):
         # Add any validation logic if needed
-        self._cubearr = new_cubearr

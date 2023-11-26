@@ -1,3 +1,6 @@
+from Cube import Cube
+
+
 class Faces (Cube):
 
     def __init__(self, cubearr):
