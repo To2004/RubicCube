@@ -1,3 +1,5 @@
+import copy
+
 cube_arr = [
     [[1, 2, 3], [4, 5, 6], [7, 8, 9]],
     [[10, 11, 12], [13, 14, 15], [16, 17, 18]],
@@ -16,9 +18,31 @@ def transform_cube_to_custom_shape(cube_arr):
             [cube_arr[j][b][i] for b in range(3)] for i in range(3)
         ] for j in range(6)
     ]
+def F (cube_arr):
+        # Add any validation logic if needed
+        custom_cube=transform_cube_to_custom_shape(cube_arr)
+        copycubearr=copy.deepcopy(cube_arr)
+        custom_cube[1][0], custom_cube[2][0], custom_cube[0][2], custom_cube[3][2] = (
+            custom_cube[2][0], custom_cube[0][2], custom_cube[3][2], custom_cube[1][0]
+        )
+
+        copyrow=custom_cube[5][0]
+        copyrow2 = custom_cube[5][2]
+        custom_cube[5][2] = copycubearr[5][0]
+        custom_cube[5][0] = copycubearr[5][2]
+        copycubearr=transform_cube_to_custom_shape(custom_cube)
+        copycubearr[5][2] =  copyrow2
+        copycubearr[5][0] =  copyrow
+        cubearr=copycubearr
+        print( cubearr)
 
 
-c=transform_cube_to_custom_shape(cube_arr)
-c=transform_cube_to_custom_shape(c)
+def rotate_front_clockwise(cube_arr):
+    # Perform a 90-degree clockwise rotation of the front face
+    rotated_face = list(zip(*reversed(cube_arr[1])))
+    cube_arr[1] = rotated_face
 
-print(c)
+
+F(cube_arr)
+rotate_front_clockwise(cube_arr)
+print(cube_arr)
