@@ -1,4 +1,8 @@
-class Action (Faces):
+from Algoritem import Algoritem
+from Faces import Faces
+
+
+class Action (Faces,Algoritem):
     def __init__(self, cubearr):
         # Call the constructor of the base class (Faces)
         super().__init__(cubearr)

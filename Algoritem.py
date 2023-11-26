@@ -1,3 +1,4 @@
+class Algoritem ():
 def transform_cube_to_custom_shape(cube_arr):
     return [
         [
