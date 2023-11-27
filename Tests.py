@@ -37,12 +37,22 @@ def F (cube_arr):
         print( cubearr)
 
 
-def rotate_front_clockwise(cube_arr):
-    # Perform a 90-degree clockwise rotation of the front face
-    rotated_face = list(zip(*reversed(cube_arr[1])))
-    cube_arr[1] = rotated_face
+def G(cube_arr):
+    # Add any validation logic if needed
+    custom_cube = transform_cube_to_custom_shape(cube_arr)
+    custom_cube[1][0], custom_cube[2][0], custom_cube[0][2], custom_cube[3][2] = (
+        custom_cube[2][0], custom_cube[0][2], custom_cube[3][2], custom_cube[1][0]
+    )
+
+    copycubearr = transform_cube_to_custom_shape(custom_cube)
+    rotated_matrix = transform_cube_to_custom_shape(custom_cube)[5]
+    rotated_matrix = [list(row) for row in zip(*reversed(rotated_matrix))]
+    copycubearr[5] = rotated_matrix
+    print(copycubearr)
+
+
+
 
 
 F(cube_arr)
-rotate_front_clockwise(cube_arr)
-print(cube_arr)
+G(cube_arr)
