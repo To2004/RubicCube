@@ -30,17 +30,17 @@ class Action (Faces,Algoritem):
 
 
 
-    def R(self):
-        # Add any validation logic if needed
+    #def R(self):
+            # Add any validation logic if needed
 
-    def U(self):
-        # Add any validation logic if needed
+    #def U(self):
+            # Add any validation logic if needed
 
-    def cubearr(self):
-        # Add any validation logic if needed
+    #def cubearr(self):
+            # Add any validation logic if needed
 
-    def cubearr(self):
-        # Add any validation logic if needed
+    #def cubearr(self):
+            # Add any validation logic if needed
 
-    def cubearr(self):
-        # Add any validation logic if needed
+    #def cubearr(self):
+            # Add any validation logic if needed
