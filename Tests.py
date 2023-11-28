@@ -58,10 +58,8 @@ def G2(cube_arr):
 
     copycubearr = transform_cube_to_custom_shape(custom_cube)
     rotated_matrix = transform_cube_to_custom_shape(custom_cube)[5]
-    for i in range (3):
-
-      rotated_matrix = list(reversed(list(zip(*rotated_matrix))))
-    copycubearr[5] = [list(row) for row in rotated_matrix]
+    rotated_matrix = [list(row) for row in reversed(list(zip(*rotated_matrix)))]
+    copycubearr[5] =  rotated_matrix
     print(copycubearr[5])
 
 

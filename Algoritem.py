@@ -15,3 +15,11 @@ class Algoritem ():
                 [cube_arr[j][b][i] for b in range(3)] for i in range(3)
             ] for j in range(6)
         ]
+
+    def spinrightmatrix(matrix):
+        rotated_matrix = [list(row) for row in zip(*reversed(matrix))]
+        return  rotated_matrix
+    def spinleftmatrix(matrix):
+        rotated_matrix = [list(row) for row in reversed(list(zip(*matrix)))]
+        return  rotated_matrix
+
