@@ -17,9 +17,27 @@ class Algoritem ():
         ]
 
     def spinrightmatrix(matrix):
-        rotated_matrix = [list(row) for row in zip(*reversed(matrix))]
-        return  rotated_matrix
-    def spinleftmatrix(matrix):
-        rotated_matrix = [list(row) for row in reversed(list(zip(*matrix)))]
-        return  rotated_matrix
+        """
+        Rotate the matrix to the right.
 
+        Parameters:
+        - matrix (list): The input matrix to be rotated.
+
+        Returns:
+        - list: The rotated matrix.
+        """
+        rotated_matrix = [list(row) for row in zip(*reversed(matrix))]
+        return rotated_matrix
+
+    def spinleftmatrix(matrix):
+        """
+        Rotate the matrix to the left.
+
+        Parameters:
+        - matrix (list): The input matrix to be rotated.
+
+        Returns:
+        - list: The rotated matrix.
+        """
+        rotated_matrix = [list(row) for row in reversed(list(zip(*matrix)))]
+        return rotated_matrix
