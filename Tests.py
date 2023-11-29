@@ -40,8 +40,8 @@ def F (cube_arr):
 def G(cube_arr):
     # Add any validation logic if needed
     custom_cube = transform_cube_to_custom_shape(cube_arr)
-    custom_cube[1][0], custom_cube[2][0], custom_cube[0][2], custom_cube[3][2] = (
-        custom_cube[2][0], custom_cube[0][2], custom_cube[3][2], custom_cube[1][0]
+    custom_cube[1][0], cube_arr[2][2], custom_cube[0][2], cube_arr[3][0], = (
+        cube_arr[2][2], custom_cube[0][2], cube_arr[3][0], custom_cube[1][0]
     )
 
     copycubearr = transform_cube_to_custom_shape(custom_cube)
@@ -52,15 +52,15 @@ def G(cube_arr):
 def G2(cube_arr):
     # Add any validation logic if needed
     custom_cube = transform_cube_to_custom_shape(cube_arr)
-    custom_cube[1][0], custom_cube[2][0], custom_cube[0][2], custom_cube[3][2] = (
-        custom_cube[2][0], custom_cube[0][2], custom_cube[3][2], custom_cube[1][0]
-    )
 
+    cube_arr[2][2], custom_cube[0][2], cube_arr[3][0], custom_cube[1][0]=(
+        custom_cube[1][0], cube_arr[2][2], custom_cube[0][2], cube_arr[3][0],
+    )
     copycubearr = transform_cube_to_custom_shape(custom_cube)
     rotated_matrix = transform_cube_to_custom_shape(custom_cube)[5]
     rotated_matrix = [list(row) for row in reversed(list(zip(*rotated_matrix)))]
     copycubearr[5] =  rotated_matrix
-    print(copycubearr[5])
+    print(copycubearr)
 
 
 
