@@ -12,7 +12,7 @@ class Action (Faces,Algoritem):
         # Add any validation logic if needed
         cubearr= Algoritem.spin_somthing_right(copy.deepcopy(self.cubearr),line)
         if line!=1:
-            cubearr[5 - line // 2]=Algoritem.spinrightmatrix( copy.deepcopy(cubearr))
+            cubearr[5 - line // 2]=Algoritem.spinrightmatrix( copy.deepcopy(  cubearr[5 - line // 2]))
 
         self.cubearr=cubearr
 
@@ -20,7 +20,7 @@ class Action (Faces,Algoritem):
         # Add any validation logic if needed
         cubearr= Algoritem.spin_somthing_left(copy.deepcopy(self.cubearr),line)
         if line!=1:
-            cubearr[5 - line // 2]=Algoritem.spinleftmatrix( copy.deepcopy(cubearr))
+            cubearr[5 - line // 2]=Algoritem.spinleftmatrix( copy.deepcopy(cubearr[5 - line // 2]))
 
         self.cubearr=cubearr
 
