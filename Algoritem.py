@@ -42,6 +42,16 @@ class Algoritem ():
         rotated_matrix = [list(row) for row in reversed(list(zip(*matrix)))]
         return rotated_matrix
     def spin_backside_right(cube_arr,line):
+        """
+           Spin the backside of the cube to the right.
+
+           Parameters:
+           - cube_arr (list): The 2D array representing the cube.
+           - line (int): The line to spin.
+
+           Returns:
+           - list: The modified cube array after the spin.
+           """
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[1][0+line], custom_cube[0][2-line], = (
             cube_arr[2][2-line], cube_arr[3][0+line]
@@ -53,6 +63,16 @@ class Algoritem ():
         )
         return  copycubearr
     def spin_backside_left(cube_arr,line):
+        """
+           Spin the backside of the cube to the left.
+
+           Parameters:
+           - cube_arr (list): The 2D array representing the cube.
+           - line (int): The line to spin.
+
+           Returns:
+           - list: The modified cube array after the spin.
+           """
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[0][2-line], custom_cube[1][0+line] = (
             cube_arr[2][2-line], cube_arr[3][0+line],
@@ -64,13 +84,33 @@ class Algoritem ():
         )
         return copycubearr
     def spin_sideways_right(cube_arr,line):
-       cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line], = (
+        """
+           Spin the cube sideways to the right.
+
+           Parameters:
+           - cube_arr (list): The 2D array representing the cube.
+           - line (int): The line to spin.
+
+           Returns:
+           - list: The modified cube array after the spin.
+           """
+        cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line], = (
            cube_arr[4][0+line], cube_arr[5][0+line], cube_arr[0][0+line], cube_arr[1][0+line],
-       )
-       return  cube_arr
+        )
+        return  cube_arr
 
 
     def spin_sideways_left(cube_arr,line):
+        """
+            Spin the cube sideways to the left.
+
+            Parameters:
+            - cube_arr (list): The 2D array representing the cube.
+            - line (int): The line to spin.
+
+            Returns:
+            - list: The modified cube array after the spin.
+            """
         cube_arr[4][0+line], cube_arr[5][0+line], cube_arr[0][0+line], cube_arr[1][0+line], = (
             cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line],
         )
