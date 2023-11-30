@@ -41,7 +41,7 @@ class Algoritem ():
         """
         rotated_matrix = [list(row) for row in reversed(list(zip(*matrix)))]
         return rotated_matrix
-    def spin_somthing_right(cube_arr,line):
+    def spin_backside_right(cube_arr,line):
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[1][0+line], custom_cube[0][2-line], = (
             cube_arr[2][2-line], cube_arr[3][0+line]
@@ -52,7 +52,7 @@ class Algoritem ():
             custom_cube[1][0 + line], custom_cube[0][2 - line]
         )
         return  copycubearr
-    def spin_somthing_left(cube_arr,line):
+    def spin_backside_left(cube_arr,line):
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[0][2-line], custom_cube[1][0+line] = (
             cube_arr[2][2-line], cube_arr[3][0+line],
