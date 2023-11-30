@@ -8,27 +8,21 @@ class Action (Faces,Algoritem):
     def __init__(self, cubearr):
         # Call the constructor of the base class (Faces)
         super().__init__(cubearr)
-    def F (self):
+    def F (self,line):
         # Add any validation logic if needed
-        custom_cube=Algoritem.transform_cube_to_custom_shape(self.cubearr())
-        copycubearr=copy.deepcopy(self.cubearr())
-        custom_cube[1][0], custom_cube[2][0], custom_cube[0][2], custom_cube[3][2] = (
-            custom_cube[2][0], custom_cube[0][2], custom_cube[3][2], custom_cube[1][0]
-        )
+        cubearr= Algoritem.spin_somthing_right(copy.deepcopy(self.cubearr),line)
+        if line!=1:
+            cubearr[5 - line // 2]=Algoritem.spinrightmatrix( copy.deepcopy(cubearr))
 
-        copyrow=custom_cube[5][0]
-        copyrow2 = custom_cube[5][2]
-        custom_cube[5][2] = copycubearr[5][0]
-        custom_cube[5][0] = copycubearr[5][2]
-        copycubearr=Algoritem.transform_cube_to_custom_shape(custom_cube)
-        copycubearr[5][2] =  copyrow2
-        copycubearr[5][0] =  copyrow
-        self.cubearr=copycubearr
-        print( self.cubearr)
+        self.cubearr=cubearr
 
+    def Fleft (self,line):
+        # Add any validation logic if needed
+        cubearr= Algoritem.spin_somthing_left(copy.deepcopy(self.cubearr),line)
+        if line!=1:
+            cubearr[5 - line // 2]=Algoritem.spinleftmatrix( copy.deepcopy(cubearr))
 
-
-
+        self.cubearr=cubearr
 
     #def R(self):
             # Add any validation logic if needed
