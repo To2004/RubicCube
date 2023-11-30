@@ -63,3 +63,15 @@ class Algoritem ():
             custom_cube[1][0+line], custom_cube[0][2-line],
         )
         return copycubearr
+    def spin_sideways_right(cube_arr,line):
+       cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line], = (
+           cube_arr[4][0+line], cube_arr[5][0+line], cube_arr[0][0+line], cube_arr[1][0+line],
+       )
+       return  cube_arr
+
+
+    def spin_sideways_left(cube_arr,line):
+        cube_arr[4][0+line], cube_arr[5][0+line], cube_arr[0][0+line], cube_arr[1][0+line], = (
+            cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line],
+        )
+        return cube_arr
