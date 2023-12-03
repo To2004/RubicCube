@@ -10,7 +10,7 @@ class Action (Faces,Algoritem):
         super().__init__(cubearr)
     def F (self,line):
         # Add any validation logic if needed
-        cubearr= Algoritem.spin_somthing_right(copy.deepcopy(self.cubearr),line)
+        cubearr= Algoritem.spin_backside_right(copy.deepcopy(self.cubearr),line)
         if line!=1:
             cubearr[5 - line // 2]=Algoritem.spinrightmatrix( copy.deepcopy(  cubearr[5 - line // 2]))
 
@@ -18,23 +18,37 @@ class Action (Faces,Algoritem):
 
     def Fleft (self,line):
         # Add any validation logic if needed
-        cubearr= Algoritem.spin_somthing_left(copy.deepcopy(self.cubearr),line)
+        cubearr= Algoritem. spin_backside_left(copy.deepcopy(self.cubearr),line)
         if line!=1:
             cubearr[5 - line // 2]=Algoritem.spinleftmatrix( copy.deepcopy(cubearr[5 - line // 2]))
 
         self.cubearr=cubearr
 
+    def U(self, line):
+        # Add any validation logic if needed
+        cubearr = Algoritem.spin_sideways_right(copy.deepcopy(self.cubearr), line)
+        if line != 1:
+            cubearr[2 + line // 2] = Algoritem.spinrightmatrix(copy.deepcopy(cubearr[2 + line // 2]))
+
+        self.cubearr = cubearr
+
+    def Uleft(self, line):
+        # Add any validation logic if needed
+        cubearr = Algoritem.spin_sideways_left(copy.deepcopy(self.cubearr), line)
+        if line != 1:
+            cubearr[2 + line // 2] = Algoritem.spinleftmatrix(copy.deepcopy(cubearr[2 + line // 2]))
+
+        self.cubearr = cubearr
+
+    def D(self, line):
+        # Add any validation logic if needed
+      Action.U(line)
+
+    def Dleft(self, line):
+        # Add any validation logic if needed
+        Action.Uleft(line)
+
     #def R(self):
             # Add any validation logic if needed
 
-    #def U(self):
-            # Add any validation logic if needed
 
-    #def cubearr(self):
-            # Add any validation logic if needed
-
-    #def cubearr(self):
-            # Add any validation logic if needed
-
-    #def cubearr(self):
-            # Add any validation logic if needed
