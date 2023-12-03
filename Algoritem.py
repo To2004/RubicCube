@@ -115,3 +115,28 @@ class Algoritem ():
             cube_arr[0][0+line], cube_arr[1][0+line], cube_arr[5][0+line], cube_arr[4][0+line],
         )
         return cube_arr
+
+    def spin_right(cube_arr, line):
+
+        custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
+        custom_cube[2][0 + line], custom_cube[3][0 + line], = (
+            cube_arr[4][2 - line], cube_arr[5][0 + line]
+        )
+
+        copycubearr = Algoritem.transform_cube_to_custom_shape(custom_cube)
+        cube_arr[4][2 - line], cube_arr[5][0 + line] = (
+            custom_cube[2][0 + line], custom_cube[3][0 + line],
+        )
+        return copycubearr
+
+    def spin_left(cube_arr, line):
+        custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
+        custom_cube[2][0 + line], custom_cube[3][0 + line], = (
+            cube_arr[5][0 + line],cube_arr[4][2 - line]
+        )
+
+        copycubearr = Algoritem.transform_cube_to_custom_shape(custom_cube)
+        cube_arr[4][2 - line], cube_arr[5][0 + line] = (
+            custom_cube[2][0 + line], custom_cube[3][0 + line],
+        )
+        return copycubearr
