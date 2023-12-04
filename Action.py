@@ -52,7 +52,7 @@ class Action (Faces,Algoritem):
         # Add any validation logic if needed
         cubearr = Algoritem.spin_right(copy.deepcopy(self.cubearr), line)
         if line != 1:
-            cubearr[5 - line // 2] = Algoritem.spinrightmatrix(copy.deepcopy(cubearr[5 - line // 2]))
+            cubearr[1 - line // 2] = Algoritem.spinrightmatrix(copy.deepcopy(cubearr[1 - line // 2]))
 
         self.cubearr = cubearr
 
@@ -60,25 +60,15 @@ class Action (Faces,Algoritem):
         # Add any validation logic if needed
         cubearr = Algoritem.spin_left(copy.deepcopy(self.cubearr), line)
         if line != 1:
-            cubearr[5 - line // 2] = Algoritem.spinleftmatrix(copy.deepcopy(cubearr[5 - line // 2]))
+            cubearr[1 - line // 2] = Algoritem.spinleftmatrix(copy.deepcopy(cubearr[1 - line // 2]))
 
         self.cubearr = cubearr
     def L(self, line):
         # Add any validation logic if needed
-        cubearr = Algoritem.spin_right(copy.deepcopy(self.cubearr), line)
-        if line != 1:
-            cubearr[5 - line // 2] = Algoritem.spinrightmatrix(copy.deepcopy(cubearr[5 - line // 2]))
-
-        self.cubearr = cubearr
-
+        Action.R(line)
     def Lleft(self, line):
         # Add any validation logic if needed
-        cubearr = Algoritem.spin_left(copy.deepcopy(self.cubearr), line)
-        if line != 1:
-            cubearr[5 - line // 2] = Algoritem.spinleftmatrix(copy.deepcopy(cubearr[5 - line // 2]))
-
-        self.cubearr = cubearr
-
+        Action.Rleft(line)
 
 
 
