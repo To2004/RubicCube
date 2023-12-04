@@ -117,6 +117,16 @@ class Algoritem ():
         return cube_arr
 
     def spin_right(cube_arr, line):
+        """
+           Spin the right side of the cube to the right.
+
+           Parameters:
+           - cube_arr (list): The 2D array representing the cube.
+           - line (int): The line to spin.
+
+           Returns:
+           - list: The modified cube array after the spin.
+           """
 
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[2][0 + line], custom_cube[3][0 + line], = (
@@ -130,6 +140,16 @@ class Algoritem ():
         return copycubearr
 
     def spin_left(cube_arr, line):
+        """
+            Spin the left side of the cube to the left.
+
+            Parameters:
+            - cube_arr (list): The 2D array representing the cube.
+            - line (int): The line to spin.
+
+            Returns:
+            - list: The modified cube array after the spin.
+            """
         custom_cube = Algoritem.transform_cube_to_custom_shape(cube_arr)
         custom_cube[2][0 + line], custom_cube[3][0 + line], = (
             cube_arr[5][0 + line],cube_arr[4][2 - line]
